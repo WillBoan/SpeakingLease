@@ -30,8 +30,20 @@ $(function() {
       keys: ["text"]
   });
 
+<<<<<<< HEAD
   let query = $('.search_box').val;
   let result = fuse.search(query);
+=======
+  $(document).keypress(function(event){
+	
+    var keycode = (event.keyCode ? event.keyCode : event.which);
+    if(keycode == '13'){
+      let query = document.getElementById('search_box').innerHTML;
+      let result = fuse.search(query);	
+      console.log(result);
+    }
+    
+  });
+>>>>>>> 008a139707ae1fcc93f8b875847e8768bd3202bb
 
-  console.log(result);
 });
