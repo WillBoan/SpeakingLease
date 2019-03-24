@@ -15,7 +15,7 @@ $(function() {
   console.log(main_clauses_obj);
   console.log(main_clauses_obj[1]);
 
-  let fuse = new fuse(main_clauses_obj, {
+  let fuse = new Fuse(main_clauses_obj, {
       shouldSort: true,
       threshold: 0.6,
       location: 0,
