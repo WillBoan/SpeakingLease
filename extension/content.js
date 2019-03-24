@@ -2,11 +2,13 @@ $(function() {
 
 
   // SEARCH BOX:
-  let search_box_html
+  let search_box = document.createElement("input");  // Create with DOM
+  search_box.classList = "search_box";
+  $("body").prepend(search_box);
 
 
 
-  let search_str = "How do I change my locks?";
+  // let search_str = "How do I change my locks?";
 
   const word_section = $(".WordSection1");
   const elements_start = $(".law-level-1").first();
@@ -18,7 +20,7 @@ $(function() {
     main_clauses_obj.push({"text":$(this).text()});
   });
 
-  let fuse = new fuse(main_clauses_obj, {
+  let fuse = new Fuse(main_clauses_obj, {
       shouldSort: true,
       threshold: 0.6,
       location: 0,
@@ -28,7 +30,7 @@ $(function() {
       keys: ["text"]
   });
 
-  let query = document.getElementById('search_box').innerHTML;
+  let query = $('.search_box').val;
   let result = fuse.search(query);
 
   console.log(result);
