@@ -18,12 +18,18 @@ $(function() {
     main_clauses_obj.push({"text":$(this).text()});
   });
 
+  let fuse = new fuse(main_clauses_obj, {
+      shouldSort: true,
+      threshold: 0.6,
+      location: 0,
+      distance: 100,
+      maxPatternLength: 32,
+      minMatchCharLength: 1,
+      keys: ["text"]
+  });
 
+  let query = document.getElementById('search_box').innerHTML;
+  let result = fuse.search(query);
 
-
-
-
-
-
-
+  console.log(result);
 });
