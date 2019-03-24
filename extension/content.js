@@ -23,6 +23,8 @@ $(function() {
   let fuse = new Fuse(main_clauses_obj, {
       shouldSort: true,
       threshold: 0.6,
+      includeScore: true,
+      tokenize: true,
       location: 0,
       distance: 100,
       maxPatternLength: 32,
@@ -34,9 +36,11 @@ $(function() {
 
     var keycode = (event.keyCode ? event.keyCode : event.which);
     if(keycode == '13'){
-      let query = document.getElementById('search_box').innerHTML;
-      let result = fuse.search(query);
-      console.log(result);
+      let query = $('.search_box').val();
+      console.log(query);
+      let results = fuse.search(query);
+
+      console.log(results);
     }
 
   });
