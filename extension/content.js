@@ -25,8 +25,15 @@ $(function() {
       keys: ["text"]
   });
 
-  let query = document.getElementById('search_box').innerHTML;
-  let result = fuse.search(query);
+  $(document).keypress(function(event){
+	
+    var keycode = (event.keyCode ? event.keyCode : event.which);
+    if(keycode == '13'){
+      let query = document.getElementById('search_box').innerHTML;
+      let result = fuse.search(query);	
+      console.log(result);
+    }
+    
+  });
 
-  console.log(result);
 });
