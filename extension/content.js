@@ -30,10 +30,6 @@ $(function() {
       keys: ["text"]
   });
 
-<<<<<<< HEAD
-  let query = $('.search_box').val;
-  let result = fuse.search(query);
-=======
   $(document).keypress(function(event){
 	
     var keycode = (event.keyCode ? event.keyCode : event.which);
@@ -44,6 +40,5 @@ $(function() {
     }
     
   });
->>>>>>> 008a139707ae1fcc93f8b875847e8768bd3202bb
 
 });
